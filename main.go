@@ -28,7 +28,7 @@ func main() {
 		log.Fatalf("Error changing dirs. Err: %s", err)
 	}
 
-	gitCmd := exec.Command("git", "init")
+	gitCmd := exec.Command("git", "init", "&&", "git", "remote", "add", "origin", packageName+".git")
 	err = gitCmd.Run()
 	if err != nil {
 		log.Fatalf("Error doing git command. Err: %s", err)
